@@ -1,6 +1,6 @@
 ## Kash Application
 
-Description HERE!!!
+Kash Application allows the activity of buying or selling of products on online services or over the Internet.
 
 ## Features (Clients)
 
