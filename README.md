@@ -69,6 +69,7 @@ Description HERE!!!
  - Order ID
 
 ### Notifications
+ - Standard Notifications
 
 ## Future Recommendations
 
@@ -78,7 +79,7 @@ Description HERE!!!
 
 ### Communication (Chat/Conversations With Seller)
 
-### List Barber Shop & Barber
+### List Shop & Seller
 
 ## Software & Technologies
  1) Database
