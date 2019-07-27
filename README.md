@@ -5,9 +5,9 @@ Description HERE!!!
 ## Features (Clients)
 
 ### Sign In/Sign Up/Reset Password (Authenticate User)
- - Remember Me Feature
- - Email Forget Password
- - Sign In To Buy (Check At Check Out)
+ 1) Remember Me Feature
+ 2) Email Forget Password
+ 3) Sign In To Buy (Check At Check Out)
 
 ### Profile
  1) Home Page
@@ -32,6 +32,7 @@ Description HERE!!!
  - Change/Add Address
  - Coupons
  - Add Quantity (Set Maximum 99)
+ - Out Of Stock
  5) Wishlists
  - Load All Wishlist Products
  - Details (Image, Name, Details, Ratings)
@@ -52,13 +53,18 @@ Description HERE!!!
  - Price
  - Ratings
  3) Add Wishlists
+ - Load All Wishlist Products
+ - Details (Image, Name, Details, Ratings)
+ - Delete/Remove Products In Wishlists
  4) Cart
+ - Add Products 
  - Total Amount
  - Delivery Cost
- - Remove Items
+ - Remove Products
  - Change/Add Address
  - Coupons
- 5) Out Of Stock
+ - Add Quantity (Set Maximum 99)
+ - Out Of Stock
 
 ### Cash On Delivery (COD)/Online Payments (PayTM Integration)
  1) OTP Verification
