@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "318719740622",
+    "firebase_url": "https://kashapppdb.firebaseio.com",
+    "project_id": "kashapppdb",
+    "storage_bucket": "kashapppdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318719740622:android:47d091fd76271824",
+        "android_client_info": {
+          "package_name": "com.kashapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318719740622-9n24h3i6g0fh6ic99t60ssrv3i9fb4ij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kashapp",
+            "certificate_hash": "2f1959cb05759578ae9430a34b2a8eddf3d01f13"
+          }
+        },
+        {
+          "client_id": "318719740622-n80oc3pgj88pmit4fu3mjr968pn64ruh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYal7LZrs70IroPUJUlUglmx8W0WeSZFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318719740622-n80oc3pgj88pmit4fu3mjr968pn64ruh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
