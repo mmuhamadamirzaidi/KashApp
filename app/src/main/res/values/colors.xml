@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#24562B</color>
-    <color name="colorPrimaryDark">#19461A</color>
+    <color name="colorPrimaryDark">#24562B</color>
     <color name="colorAccent">#24562B</color>
+
+    <color name="white">#ffffff</color>
+
+    //Background
+    <color name="backgroundPrimary">#ffffff</color>
+    <color name="backgroundSecondary">#24562B</color>
+
+    //Button
+    <color name="colorTransparent">#00000000</color>
+    <color name="disable">#DDDDDD</color>
+
+    //Recycler view
+    <color name="defaultColor">#f4f4f4</color>
+
+    //Text
+    <color name="textColorPrimaryDark">#2c2c2c</color>
+    <color name="textColorPrimary">#4b4b4c</color>
+    <color name="textColorAccent">#808080</color>
+
+    //Others
+
 </resources>
