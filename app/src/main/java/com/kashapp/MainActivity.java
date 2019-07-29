@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.kashapp;
+package com.kashapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

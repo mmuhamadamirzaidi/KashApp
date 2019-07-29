@@ -1,4 +1,4 @@
-package com.mmuhamadamirzaidi.kashapp;
+package com.kashapp;
 
 import org.junit.Test;
 
