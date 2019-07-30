@@ -29,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
             }
         },SPLASH_TIME_OUT);
 
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.splashanimation);
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash_animation);
         SplashLogo.startAnimation(animation);
     }
 }

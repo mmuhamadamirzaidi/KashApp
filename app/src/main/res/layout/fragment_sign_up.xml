@@ -82,8 +82,8 @@
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_name"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/sign_up_full_name"
+                    android:inputType="text"
                     android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_email"
+                    android:id="@+id/sign_up_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:layout_width="match_parent"
@@ -154,7 +154,7 @@
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_password"
+                    android:id="@+id/sign_up_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -190,7 +190,7 @@
                     android:tint="@color/white" />
 
                 <EditText
-                    android:id="@+id/signup_confirm_password"
+                    android:id="@+id/sign_up_confirm_password"
                     android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -208,7 +208,7 @@
             </RelativeLayout>
 
             <Button
-                android:id="@+id/signup_button"
+                android:id="@+id/sign_up_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/relativeLayout3"
@@ -221,7 +221,7 @@
                 android:textColor="@color/white" />
 
             <RelativeLayout
-                android:layout_below="@+id/signup_button"
+                android:layout_below="@+id/sign_up_button"
                 android:id="@+id/rellay2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -241,7 +241,7 @@
                     android:textColor="@color/textColorPrimary" />
 
                 <Button
-                    android:id="@+id/signin_account_button"
+                    android:id="@+id/sign_in_account_button"
                     android:fontFamily="@font/ml"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
