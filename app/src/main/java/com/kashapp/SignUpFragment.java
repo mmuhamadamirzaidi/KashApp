@@ -52,7 +52,7 @@ public class SignUpFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
-//        dialog = new SpotsDialog.Builder().setContext(getActivity()).build();
+        // Custom dialog
         dialog = new SpotsDialog.Builder().setContext(getActivity()).setTheme(R.style.Creating).build();
 
         sign_in_account_button = view.findViewById(R.id.sign_in_account_button);
@@ -76,7 +76,7 @@ public class SignUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //Bottom button
+        // Bottom button
         sign_in_account_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,20 +87,20 @@ public class SignUpFragment extends Fragment {
         forget_password_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Go to forget password page
+                // Go to forget password page
             }
         });
 
-        //Sign up button
+        // Sign up button
         sign_up_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Upload data to Firebase
+                // Upload data to Firebase
                 CreateNewAccount();
             }
         });
 
-        //Edit text listener
+        // Edit text listener
         sign_up_full_name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -40,7 +40,7 @@ dependencies {
 
     //Firebase Libraries
     implementation 'com.google.firebase:firebase-core:16.0.5'
-//    implementation 'com.google.firebase:firebase-firestore:18.2.0'
+    implementation 'com.google.firebase:firebase-firestore:17.1.3'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
 
     //Others
