@@ -159,7 +159,7 @@
                 android:layout_marginTop="30dp" >
 
                 <Button
-                    android:id="@+id/forgot_password_button"
+                    android:id="@+id/forget_password_button"
                     android:fontFamily="@font/ml"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
