@@ -22,6 +22,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import dmax.dialog.SpotsDialog;
 
@@ -40,6 +45,7 @@ public class SignUpFragment extends Fragment {
     private AlertDialog dialog;
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
 
     public SignUpFragment() {
         // Required empty public constructor
@@ -68,6 +74,7 @@ public class SignUpFragment extends Fragment {
         sign_up_button = view.findViewById(R.id.sign_up_button);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
         return view;
     }
@@ -172,7 +179,7 @@ public class SignUpFragment extends Fragment {
     }
 
     private void CreateNewAccount() {
-        String fullname = sign_up_full_name.getText().toString().trim();
+        final String fullname = sign_up_full_name.getText().toString().trim();
         String email = sign_up_email.getText().toString().trim();
         String password = sign_up_password.getText().toString().trim();
         String confirmPassword = sign_up_confirm_password.getText().toString().trim();
@@ -200,29 +207,29 @@ public class SignUpFragment extends Fragment {
             Toast.makeText(getActivity(), "Please fill in your password!", Toast.LENGTH_SHORT).show();
             valid = false;
         }
-        String upperCaseChars = "(.*[A-Z].*)";
-        if (!password.matches(upperCaseChars ))
-        {
-            Toast.makeText(getActivity(), "Password should contain at least one upper case alphabet!", Toast.LENGTH_SHORT).show();
-            valid = false;
-        }
-        String lowerCaseChars = "(.*[a-z].*)";
-        if (!password.matches(lowerCaseChars ))
-        {
-            Toast.makeText(getActivity(), "Password should contain at least one lower case alphabet!", Toast.LENGTH_SHORT).show();
-            valid = false;
-        }
+//        String upperCaseChars = "(.*[A-Z].*)";
+//        if (!password.matches(upperCaseChars ))
+//        {
+//            Toast.makeText(getActivity(), "Password should contain at least one upper case alphabet!", Toast.LENGTH_SHORT).show();
+//            valid = false;
+//        }
+//        String lowerCaseChars = "(.*[a-z].*)";
+//        if (!password.matches(lowerCaseChars ))
+//        {
+//            Toast.makeText(getActivity(), "Password should contain at least one lower case alphabet!", Toast.LENGTH_SHORT).show();
+//            valid = false;
+//        }
         if (password.length() > 32 || password.length() < 8)
         {
             Toast.makeText(getActivity(), "Password should be more than 8 and less than 32 characters in length!", Toast.LENGTH_SHORT).show();
             valid = false;
         }
-        String numbers = "(.*[0-9].*)";
-        if (!password.matches(numbers ))
-        {
-            Toast.makeText(getActivity(), "Password should contain at least one number!", Toast.LENGTH_SHORT).show();
-            valid = false;
-        }
+//        String numbers = "(.*[0-9].*)";
+//        if (!password.matches(numbers ))
+//        {
+//            Toast.makeText(getActivity(), "Password should contain at least one number!", Toast.LENGTH_SHORT).show();
+//            valid = false;
+//        }
         String specialChars = "(.*[,~,!,@,#,$,%,^,&,*,(,),-,_,=,+,[,{,],},|,;,:,<,>,/,?].*$)";
         if (!password.matches(specialChars ))
         {
@@ -249,12 +256,28 @@ public class SignUpFragment extends Fragment {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful())
                             {
-//                                SendEmailVerification();
-                                sign_up_button.setEnabled(false);
-                                sign_up_button.setBackgroundResource(R.color.disable);
+                                Map<Object, String> userdata = new HashMap<>();
+                                userdata.put("fullname", fullname);
 
-                                SendUserToMainActivity();
-                                dialog.dismiss();
+                                firebaseFirestore.collection("Users").add(userdata).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentReference> task) {
+                                        if (task.isSuccessful())
+                                        {
+                                            sign_up_button.setEnabled(false);
+                                            sign_up_button.setBackgroundResource(R.color.disable);
+
+                                            SendUserToMainActivity();
+                                            dialog.dismiss();
+                                        }else{
+                                            sign_up_button.setEnabled(true);
+                                            sign_up_button.setBackgroundResource(R.color.colorPrimaryDark);
+                                            String message = task.getException().getMessage();
+                                            Toast.makeText(getActivity(), "Error occurred: "+message, Toast.LENGTH_SHORT).show();
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
                             }
                             else
                             {
