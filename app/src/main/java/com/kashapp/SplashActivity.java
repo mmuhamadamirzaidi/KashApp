@@ -46,10 +46,10 @@ public class SplashActivity extends AppCompatActivity {
 
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
-        if (currentUser != null) {
-            SendUserToMainActivity();
-        } else {
+        if (currentUser == null) {
             SendUserToSignUpActivity();
+        } else {
+            SendUserToMainActivity();
         }
     }
 

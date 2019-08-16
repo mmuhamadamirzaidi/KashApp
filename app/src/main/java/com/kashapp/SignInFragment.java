@@ -93,6 +93,13 @@ public class SignInFragment extends Fragment {
             }
         });
 
+        forget_password_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setForgetFragment(new ForgetPasswordFragment());
+            }
+        });
+
         // Edit text listener
         sign_in_email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -155,6 +162,9 @@ public class SignInFragment extends Fragment {
         if (valid) {
             dialog.show();
 
+            sign_in_button.setEnabled(false);
+            sign_in_button.setBackgroundResource(R.color.disable);
+
             firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -175,6 +185,13 @@ public class SignInFragment extends Fragment {
                         }
                     });
         }
+    }
+
+    private void setForgetFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_from_top, R.anim.slide_out_from_bottom);
+        fragmentTransaction.replace(sign_up_frame_layout.getId(), fragment);
+        fragmentTransaction.commit();
     }
 
     private void setFragment(Fragment fragment) {

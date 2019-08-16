@@ -94,7 +94,7 @@ public class SignUpFragment extends Fragment {
         forget_password_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Go to forget password page
+                setForgetFragment(new ForgetPasswordFragment());
             }
         });
 
@@ -315,6 +315,13 @@ public class SignUpFragment extends Fragment {
             sign_up_button.setEnabled(false);
             sign_up_button.setBackgroundResource(R.color.disable);
         }
+    }
+
+    private void setForgetFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.slide_from_top, R.anim.slide_out_from_bottom);
+        fragmentTransaction.replace(sign_up_frame_layout.getId(), fragment);
+        fragmentTransaction.commit();
     }
 
     private void setFragment(Fragment fragment) {
