@@ -23,10 +23,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import dmax.dialog.SpotsDialog;
 
@@ -96,7 +92,7 @@ public class SignInFragment extends Fragment {
         forget_password_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setForgetFragment(new ForgetPasswordFragment());
+                setFragment(new ForgetPasswordFragment());
             }
         });
 
@@ -185,13 +181,6 @@ public class SignInFragment extends Fragment {
                         }
                     });
         }
-    }
-
-    private void setForgetFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.slide_from_top, R.anim.slide_out_from_bottom);
-        fragmentTransaction.replace(sign_up_frame_layout.getId(), fragment);
-        fragmentTransaction.commit();
     }
 
     private void setFragment(Fragment fragment) {

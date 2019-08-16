@@ -36,7 +36,7 @@ import dmax.dialog.SpotsDialog;
  */
 public class SignUpFragment extends Fragment {
 
-    private Button sign_in_account_button, forget_password_button;
+    private Button sign_in_account_button;
     private FrameLayout sign_up_frame_layout;
 
     private EditText sign_up_full_name, sign_up_email, sign_up_password, sign_up_confirm_password;
@@ -62,7 +62,6 @@ public class SignUpFragment extends Fragment {
         dialog = new SpotsDialog.Builder().setContext(getActivity()).setTheme(R.style.SignUp).build();
 
         sign_in_account_button = view.findViewById(R.id.sign_in_account_button);
-        forget_password_button = view.findViewById(R.id.forget_password_button);
 
         sign_up_frame_layout = getActivity().findViewById(R.id.sign_up_frame_layout);
 
@@ -88,13 +87,6 @@ public class SignUpFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 setFragment(new SignInFragment());
-            }
-        });
-
-        forget_password_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setForgetFragment(new ForgetPasswordFragment());
             }
         });
 
@@ -315,13 +307,6 @@ public class SignUpFragment extends Fragment {
             sign_up_button.setEnabled(false);
             sign_up_button.setBackgroundResource(R.color.disable);
         }
-    }
-
-    private void setForgetFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.slide_from_top, R.anim.slide_out_from_bottom);
-        fragmentTransaction.replace(sign_up_frame_layout.getId(), fragment);
-        fragmentTransaction.commit();
     }
 
     private void setFragment(Fragment fragment) {

@@ -160,6 +160,4 @@ public class ForgetPasswordFragment extends Fragment {
         fragmentTransaction.replace(sign_up_frame_layout.getId(), fragment);
         fragmentTransaction.commit();
     }
-
-
 }

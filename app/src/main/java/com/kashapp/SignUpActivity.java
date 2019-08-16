@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.FrameLayout;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -16,10 +17,10 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         frameLayout = findViewById(R.id.sign_up_frame_layout);
-        setFragment(new SignInFragment());
+        setDefaultFragment(new SignInFragment());
     }
 
-    private void setFragment(Fragment fragment) {
+    private void setDefaultFragment(Fragment fragment) {
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(frameLayout.getId(), fragment);
