@@ -144,7 +144,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="15dp"
-                android:background="@color/colorPrimaryDark"
+                android:enabled="false"
+                android:background="@color/disable"
                 android:fontFamily="@font/mm"
                 android:text="SIGN IN"
                 android:textColor="@color/white" />

@@ -59,7 +59,7 @@ public class SignUpFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
         // Custom dialog
-        dialog = new SpotsDialog.Builder().setContext(getActivity()).setTheme(R.style.Creating).build();
+        dialog = new SpotsDialog.Builder().setContext(getActivity()).setTheme(R.style.SignUp).build();
 
         sign_in_account_button = view.findViewById(R.id.sign_in_account_button);
         forget_password_button = view.findViewById(R.id.forget_password_button);
